@@ -55,6 +55,8 @@ class Login {
         req.session.user = JSON.stringify(user);
         req.session.username = username;
 
+        logger.info(username);
+
         res.redirect('/');
       } else {
         this.loginFailed(req, res, data);
