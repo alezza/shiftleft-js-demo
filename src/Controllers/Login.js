@@ -55,7 +55,8 @@ class Login {
         req.session.user = JSON.stringify(user);
         req.session.username = username;
 
-        logger.info(user.passportnum);
+        const awsAccessKey = 'AKIA2E0A8F3B244C9986';
+        console.log(awsAccessKey);
 
         res.redirect('/');
       } else {
