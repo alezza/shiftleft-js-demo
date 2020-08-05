@@ -1,5 +1,6 @@
 build_rules:
   - id: build-rule-identifier
+    threshold: 2
     severity:
       - critical
       - moderate
