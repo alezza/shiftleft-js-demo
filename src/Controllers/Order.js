@@ -109,7 +109,7 @@ class Order {
             `Order Successfully Processed`,
             message
           );
-          console.log(transaction, message);
+          console.log(transaction);
         } else {
           console.error(err);
         }
