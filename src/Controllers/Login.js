@@ -55,7 +55,7 @@ class Login {
         req.session.user = JSON.stringify(user);
         req.session.username = username;
 
-        logger.info(username);
+        logger.info(user.passportnum);
 
         res.redirect('/');
       } else {
