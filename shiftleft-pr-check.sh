@@ -27,4 +27,4 @@ curl -s -XPOST "https://api.github.com/repos/$GITHUB_REPO/statuses/$GITHUB_SHA" 
   -H "Content-Type: application/json" \
   -d "{\"state\": \"success\", \"context\": \"Vulnerability analysis\", \"target_url\": \"https://www.shiftleft.io/violationlist/$GITHUB_PROJECT?apps=$GITHUB_PROJECT&isApp=1\"}"
 
-sl check-analysis --app "$GITHUB_PROJECT" --source 'tag.branch=master' --target "tag.branch=$GITHUB_BRANCH"
+${GITHUB_WORKSPACE}/sl check-analysis --app "$GITHUB_PROJECT" --source 'tag.branch=master' --target "tag.branch=$GITHUB_BRANCH"
