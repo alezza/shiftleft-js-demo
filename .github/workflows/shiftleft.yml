@@ -5,7 +5,6 @@ name: ShiftLeft
 
 on:
   push:
-  pull_request:
   workflow_dispatch:
 
 jobs:
@@ -32,8 +31,6 @@ jobs:
         
     - name: Create status check
       run: |
-        URL="https://www.shiftleft.io/violationlist/shiftleft-js-demo?apps=shiftleft-js-demo&isApp=1"
-        GH_CHECK_URL="https://api.github.com/repos/${GITHUB_REPOSITORY}/check-runs"
         sh shiftleft-pr-check.sh
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
