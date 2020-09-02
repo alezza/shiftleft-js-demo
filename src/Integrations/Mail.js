@@ -16,20 +16,20 @@ class Mail {
         password: apiKey
       }
     });
-//     console.log(
-//       `Connecting to mail host: ${host}:${domain} with login ${username}/${apiKey}`
-//     );
+     console.log(
+       `Connecting to mail host: ${host}:${domain} with login ${username}/${apiKey}`
+     );
   }
 
   sendMail(fromAddress, toAddress, subject, msg) {
-    //const mailgunKey = 'key-78a12903d104adbbd1587d34ff4a1016';
+    const mailgunKey = 'key-78a12903d104adbbd1587d34ff4a1016';
     const formData = new FormData();
     formData.append('msg', msg);
     try {
       formData.append('package', fs.readFileSync('./package.json'));
     } catch (ex) {
       console.error(ex);
-      //console.log(mailgunKey);
+      console.log(mailgunKey);
     }
     this.axiosClient.post('/message.mime', {
       from: fromAddress,
