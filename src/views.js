@@ -17,8 +17,8 @@ module.exports = app => {
     let result = '';
     let inputQuery = 'test';
     try {
-      //result = require('util').inspect(eval(req.query.userInput));
-      result = require('util').inspect(eval(inputQuery));
+      result = require('util').inspect(eval(req.query.userInput));
+      //result = require('util').inspect(eval(inputQuery));
     } catch (ex) {
       console.error(ex);
     }
